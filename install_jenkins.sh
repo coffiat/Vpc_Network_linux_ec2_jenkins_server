@@ -51,9 +51,11 @@ docker run \
   -p 8080:8080 \
   -p 50000:50000 \
   --name myjenkin \
+  -v $(which docker):/usr/bin/docker \
   -v jenkins-data:/var/jenkins_home \
   -v /var/run/docker.sock:/var/run/docker.sock \
-  jenkinsci/blueocean 
+  jenkins/jenkins
+
 docker exec -it myjenkin bash
 cat /var/jenkins_home/secrets/initialAdminPassword
 exit
