@@ -3,8 +3,8 @@ sudo yum -y update
 
 echo "Install Java JDK 8"
 yum remove -y java
-#yum install -y java-1.8.0-openjdk
-sudo yum install java-11-openjdk 
+sudo yum install -y java-1.8.0-openjdk
+#sudo yum install java-11-openjdk 
 
 echo "Install Maven"
 yum install -y maven 
@@ -53,7 +53,7 @@ docker run \
   --name myjenkin \
   -v jenkins-data:/var/jenkins_home \
   -v /var/run/docker.sock:/var/run/docker.sock \
-  jenkinsci/blueocean
+  jenkinsci/blueocean 
 docker exec -it myjenkin bash
 cat /var/jenkins_home/secrets/initialAdminPassword
 exit
