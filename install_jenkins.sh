@@ -1,10 +1,10 @@
 #!/bin/bash
 sudo yum -y update
 
-echo "Install Java JDK 8"
+echo "Install Java JDK 11"
 yum remove -y java
-sudo yum install -y java-1.8.0-openjdk
-#sudo yum install java-11-openjdk 
+#sudo yum install -y java-1.8.0-openjdk
+sudo yum install java-11-openjdk -y 
 
 echo "Install Maven"
 yum install -y maven 
